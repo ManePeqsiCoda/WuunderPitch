@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RR Aliados × Wuundeer — Propuesta de Transformación Digital 2026">
+  <title>RR ALIADOS × WUUNDEER — Pitch 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* === CSS CUSTOM PROPERTIES — RR ALIADOS BRANDKIT === */
+    :root {
+      /* Brand Colors */
+      --void: #3F0035;
+      --ash: #968E93;
+      --ember: #CE3D1F;
+      --parchment: #F5E6D3;
+      --pitch: #0F0F0F;
+      --ember-dark: #B8351A;
+      --ember-light: #E85A3A;
+      --mid: #1A1A1A;
+
+      /* Ember Opacity Variants */
+      --ember-10: rgba(206, 61, 31, 0.1);
+      --ember-20: rgba(206, 61, 31, 0.2);
+      --ember-30: rgba(206, 61, 31, 0.3);
+      --ember-60: rgba(206, 61, 31, 0.6);
+
+      /* Parchment Opacity Variants */
+      --parchment-5: rgba(245, 230, 211, 0.05);
+      --parchment-10: rgba(245, 230, 211, 0.1);
+      --parchment-15: rgba(245, 230, 211, 0.15);
+      --parchment-30: rgba(245, 230, 211, 0.3);
+      --parchment-50: rgba(245, 230, 211, 0.5);
+      --parchment-70: rgba(245, 230, 211, 0.7);
+
+      /* Void Opacity Variants */
+      --void-30: rgba(63, 0, 53, 0.3);
+      --void-95: rgba(63, 0, 53, 0.95);
+
+      /* Pitch Opacity Variants */
+      --pitch-80: rgba(15, 15, 15, 0.8);
+      --pitch-95: rgba(15, 15, 15, 0.95);
+
+      /* Legacy aliases for compatibility */
+      --rr-teal: var(--ember);
+      --rr-red: var(--ember);
+      --rr-white: var(--parchment);
+      --rr-black: var(--pitch);
+
+      /* Typography */
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      --font-ui: 'Inter', sans-serif;
+
+      /* Spacing */
+      --page-x: clamp(1.5rem, 5vw, 4rem);
+      --section-y: clamp(4rem, 10vh, 8rem);
+
+      /* Shadows */
+      --shadow-ember: 0 0 30px rgba(206, 61, 31, 0.4);
+      --shadow-ember-sm: 0 0 15px rgba(206, 61, 31, 0.3);
+      --shadow-dark: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+      /* Transitions */
+      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --transition-fast: 0.2s ease;
+      --transition-medium: 0.3s ease;
+    }
+
+    /* === RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      background: var(--pitch);
+      color: var(--parchment);
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+    }
+    ::selection { background-color: var(--ember); color: var(--parchment); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--pitch); }
+    ::-webkit-scrollbar-thumb { background: var(--void); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--ember); }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* === TYPOGRAPHY — BEBAS NEUE SCALE === */
+    .title-display {
+      font-family: var(--font-display);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-size: clamp(60px, 10vw, 120px);
+      line-height: 0.9;
+      color: var(--parchment);
+    }
+    .title-section {
+      font-family: var(--font-display);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--parchment);
+      margin-bottom: 24px;
+    }
+    .title-light { color: var(--parchment); }
+    .title-dark { color: var(--pitch); }
+    .subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--parchment);
+    }
+    .body-text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 300;
+      color: var(--parchment-70);
+    }
+    .label-mono {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ash);
+    }
+
+    /* === LAYOUT SYSTEM === */
+    .presentation {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+    }
+    .slides-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s var(--transition-smooth);
+      will-change: transform;
+    }
+    .slide {
+      min-width: 100vw;
+      min-height: 100vh;
+      position: relative;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 64px;
+    }
+    .slide--dark { background: var(--pitch); color: var(--parchment); }
+    .slide--light { background: #1C1C1C; color: var(--parchment); }
+    .slide--mid { background: #2A2A2A; color: var(--parchment); }
+    .slide-container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px 40px 40px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      min-height: calc(100vh - 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* === NAVIGATION === */
+    .nav-logo {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 100;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: var(--parchment);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .nav-logo span { color: var(--ember); }
+    .nav-logo:hover { color: var(--ember); }
+    .nav-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 100;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--parchment);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background: var(--pitch-80);
+      padding: 8px 16px;
+      border-radius: 2px;
+      border: 1px solid var(--parchment-30);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nav-menu-btn:hover { background: var(--ember); border-color: var(--ember); color: var(--parchment); }
+    .nav-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ember-10);
+      border: 1px solid var(--ember-30);
+      border-radius: 2px;
+      color: var(--parchment-70);
+      font-size: 1.25rem;
+      opacity: 0.5;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .nav-arrow:hover { opacity: 1; background: var(--ember-20); border-color: var(--ember); color: var(--parchment); }
+    .nav-arrow--left { left: 16px; }
+    .nav-arrow--right { right: 16px; }
+    .nav-arrow:disabled { opacity: 0.1; cursor: not-allowed; }
+    .slide-counter {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--ash);
+      background: var(--pitch-80);
+      padding: 8px 14px;
+      border-radius: 2px;
+      border: 1px solid var(--parchment-10);
+    }
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--ember);
+      z-index: 100;
+      transition: width 0.4s var(--transition-smooth);
+    }
+
+    /* === MENU OVERLAY === */
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: var(--void-95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .menu-overlay.active { opacity: 1; pointer-events: all; }
+    .menu-link {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 4vw, 42px);
+      color: var(--parchment-70);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 8px 24px;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    .menu-link:hover { color: var(--ember); transform: translateX(8px); }
+    .menu-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--ash);
+      cursor: pointer;
+      background: none;
+      border: none;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+    .menu-close:hover { color: var(--ember); }
+
+    /* === ANIMATIONS === */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-entry {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s var(--transition-smooth), transform 0.6s var(--transition-smooth);
+    }
+    .animate-entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.30s; }
+    .delay-3 { transition-delay: 0.45s; }
+    .delay-4 { transition-delay: 0.60s; }
+    .delay-5 { transition-delay: 0.75s; }
+    .delay-6 { transition-delay: 0.90s; }
+
+    /* === PARTICLE CANVAS === */
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* === HERO === */
+    #slide-0 { justify-content: center; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--ash);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--parchment-70);
+      max-width: 600px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .cta-button {
+      display: inline-block;
+      background: var(--ember);
+      color: var(--parchment);
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 16px 48px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+    .cta-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-ember); background: var(--ember-light); }
+
+    /* === SLIDE 1: QUIÉNES SOMOS === */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .about-left { display: flex; flex-direction: column; gap: 20px; }
+    .about-right { display: flex; flex-direction: column; gap: 14px; }
+    .value-card {
+      background: var(--parchment-5);
+      border-left: 3px solid var(--ember);
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+      transition: all 0.3s;
+    }
+    .value-card:hover { transform: translateX(4px); background: var(--ember-10); }
+    .value-card__icon { font-size: 1.25rem; margin-bottom: 6px; }
+    .value-card__title { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; color: var(--parchment); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .value-card__text { font-family: var(--font-body); font-size: 0.875rem; color: var(--ash); line-height: 1.6; font-weight: 300; }
+
+    /* === SLIDE 2: PROBLEMA === */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .problem-card {
+      background: var(--parchment-5);
+      border: 1px solid var(--parchment-15);
+      border-top: 3px solid var(--ember);
+      border-radius: 4px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+    .problem-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-ember-sm); border-top-color: var(--ember-light); }
+    .problem-card__icon { font-size: 1.75rem; margin-bottom: 14px; }
+    .problem-card__title { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; color: var(--parchment); text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.05em; }
+    .problem-card__text { font-family: var(--font-body); font-size: 0.875rem; color: var(--ash); line-height: 1.6; font-weight: 300; }
+    .problem-separator { width: 60px; height: 2px; background: var(--ember); margin: 0 auto 32px; }
+    /* Quote removed per feedback — nadie lo dijo */
+
+    /* === SLIDE 3: COMPARISON TABLE === */
+    .comparison-title { text-align: center; margin-bottom: 40px; }
+    .comparison-table-wrap { width: 100%; overflow-x: auto; }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      min-width: 700px;
+    }
+    .comparison-table thead { background: var(--void); }
+    .comparison-table thead th {
+      padding: 14px 20px;
+      font-family: var(--font-mono);
+      font-weight: 400;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--parchment-70);
+    }
+    .comparison-table tbody td {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: background 0.2s;
+      color: var(--ash);
+    }
+    .comparison-table tbody tr { border-bottom: 1px solid var(--parchment-5); }
+    .comparison-table tbody tr:hover td { background: var(--ember-10); }
+    .comparison-table td:first-child {
+      background: var(--parchment-5);
+      color: var(--parchment);
+      font-weight: 400;
+      text-align: left;
+      border-right: 1px solid var(--parchment-10);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+    .comparison-table td:nth-child(2) {
+      color: var(--ash);
+      text-align: center;
+      border-right: 1px solid var(--parchment-10);
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+    .comparison-table td:nth-child(3) {
+      background: var(--ember-10);
+      color: var(--parchment);
+      font-weight: 400;
+      text-align: center;
+      border-left: 2px solid var(--ember);
+      border-right: 2px solid var(--ember);
+    }
+
+    /* === SLIDE 4: SOLUTION === */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .solution-block {
+      background: var(--parchment-5);
+      border-top: 2px solid var(--ember);
+      padding: 14px 16px;
+      border-radius: 0;
+      transition: all 0.3s;
+    }
+    .solution-block:hover { transform: translateY(-2px); box-shadow: var(--shadow-ember-sm); background: var(--ember-10); }
+    .solution-block__icon { font-size: 1.1rem; margin-bottom: 4px; }
+    .solution-block__title { font-family: var(--font-display); font-weight: 400; font-size: 0.9rem; color: var(--ember); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .solution-block__text { font-family: var(--font-body); font-size: 0.78rem; color: var(--ash); line-height: 1.45; font-weight: 300; }
+    .prototype-box {
+      background: var(--parchment-5);
+      border: 1px solid var(--ember-30);
+      border-radius: 2px;
+      padding: 12px;
+      margin-top: 0;
+    }
+    .prototype-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--ash);
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .prototype-iframe {
+      width: 100%;
+      height: 340px;
+      border: 2px solid var(--rr-teal);
+      border-radius: 8px;
+      display: block;
+    }
+    .prototype-button {
+      display: block;
+      margin: 10px auto 0;
+      background: var(--ember);
+      color: var(--parchment);
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 9px 24px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .prototype-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-ember); background: var(--ember-light); }
+
+    /* === SLIDE 5: PROCESS === */
+    .process-timeline {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--rr-teal);
+      z-index: 0;
+    }
+    .phase-card {
+      flex: 1;
+      background: var(--parchment-5);
+      border: 1px solid var(--parchment-10);
+      border-top: 2px solid var(--ember);
+      border-radius: 2px;
+      padding: 28px;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .phase-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-ember-sm); }
+    .phase-card__icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
+    .phase-card__title { font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; color: var(--ember); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .phase-card__subtitle { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ash); font-weight: 400; margin-bottom: 16px; letter-spacing: 0.15em; text-transform: uppercase; }
+    .phase-card__list { display: flex; flex-direction: column; gap: 8px; }
+    .phase-card__item {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--parchment-70);
+      line-height: 1.5;
+      padding-left: 18px;
+      position: relative;
+      font-weight: 300;
+    }
+    .phase-card__item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ember);
+      font-weight: 400;
+    }
+    .alert-box {
+      background: var(--ember-10);
+      border: 1px solid var(--ember-30);
+      border-left: 3px solid var(--ember);
+      color: var(--parchment);
+      padding: 20px 28px;
+      border-radius: 2px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .alert-box__icon { font-size: 1.25rem; flex-shrink: 0; }
+    .alert-box__title { font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.05em; color: var(--ember); }
+    .alert-box__text { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6; color: var(--ash); font-weight: 300; }
+
+    /* === SLIDE 6: TEAM === */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .team-grid--mkt {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .team-section-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ash);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--parchment-10);
+    }
+    .team-card {
+      background: var(--parchment-5);
+      border-top: 2px solid var(--ember);
+      padding: 24px 16px;
+      border-radius: 0;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-ember-sm); background: var(--ember-10); }
+    .team-initial {
+      width: 60px;
+      height: 60px;
+      background: var(--void);
+      border: 2px solid var(--ember);
+      color: var(--parchment);
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+    }
+    .team-name { font-family: var(--font-display); font-weight: 400; font-size: 1rem; color: var(--parchment); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .team-role { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ember); font-weight: 400; margin-bottom: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .team-desc { font-family: var(--font-body); font-size: 0.8rem; color: var(--ash); line-height: 1.6; font-weight: 300; }
+
+    /* === SLIDE 7: FINANCIAL === */
+    .financial-title { text-align: center; margin-bottom: 8px; }
+    .financial-subtitle { text-align: center; font-family: var(--font-mono); font-size: 0.85rem; color: var(--ash); margin-bottom: 40px; letter-spacing: 0.1em; }
+    .services-table-wrap { width: 100%; overflow-x: auto; margin-bottom: 24px; }
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      min-width: 700px;
+    }
+    .services-table thead { background: var(--void); }
+    .services-table thead th { padding: 12px 16px; font-family: var(--font-mono); font-weight: 400; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--parchment-70); }
+    .services-table tbody td { padding: 12px 16px; font-size: 0.875rem; font-weight: 300; border-bottom: 1px solid var(--parchment-5); color: var(--ash); }
+    .services-table tbody tr:nth-child(even) { background: var(--parchment-5); }
+    .services-table .col-number { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+    .services-table .col-check { text-align: center; color: var(--ember); font-weight: 400; font-size: 1rem; }
+    .services-table .total-row { background: var(--pitch) !important; color: var(--parchment); font-weight: 400; }
+    .services-table .combo-row { background: var(--ember) !important; color: var(--parchment); font-weight: 400; }
+    .combo-box {
+      background: var(--ember);
+      color: var(--parchment);
+      padding: 20px 32px;
+      border-radius: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .combo-box__label { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .combo-box__price { font-family: var(--font-display); font-weight: 400; font-size: 2rem; letter-spacing: 0.02em; }
+    .combo-note { font-family: var(--font-body); font-size: 0.875rem; color: var(--ash); font-weight: 300; margin-bottom: 28px; }
+    .payment-box {
+      background: var(--parchment-5);
+      border-left: 3px solid var(--ember);
+      padding: 24px 32px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 48px;
+    }
+    .payment-box__title { font-family: var(--font-mono); font-weight: 400; font-size: 0.75rem; color: var(--ember); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.15em; }
+    .payment-box__list { list-style: none; padding-left: 0; }
+    .payment-box__list li { font-family: var(--font-body); font-size: 0.9rem; color: var(--parchment-70); margin-bottom: 6px; font-weight: 300; padding-left: 16px; position: relative; }
+    .payment-box__list li::before { content: '—'; position: absolute; left: 0; color: var(--ember); }
+
+    /* === PLAN SELECTOR === */
+    .plan-selector { margin-bottom: 24px; }
+    .plan-selector__title { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ember); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 14px; }
+    .plan-selector__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+    .plan-card {
+      background: var(--parchment-5);
+      border: 2px solid var(--parchment-15);
+      border-radius: 4px;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .plan-card:hover { border-color: var(--ember-60); background: var(--ember-10); }
+    .plan-card.active { border-color: var(--ember); background: var(--ember-10); }
+    .plan-card__badge { font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
+    .plan-card.active .plan-card__badge { color: var(--ember); }
+    .plan-card__price { font-family: var(--font-display); font-size: 2rem; color: var(--parchment); line-height: 1; margin-bottom: 4px; }
+    .plan-card__price span { font-size: 1rem; color: var(--ash); }
+    .plan-card.active .plan-card__price { color: var(--ember); }
+    .plan-card__detail { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ember); letter-spacing: 0.05em; margin-bottom: 10px; }
+    .plan-card__desc { font-family: var(--font-body); font-size: 0.82rem; color: var(--ash); line-height: 1.5; font-weight: 300; margin-bottom: 12px; }
+    .plan-card__check { font-family: var(--font-mono); font-size: 0.65rem; color: var(--ember); letter-spacing: 0.1em; text-transform: uppercase; display: none; }
+    .plan-card.active .plan-card__check { display: block; }
+
+    /* === CRONOGRAMA INTERACTIVO === */
+    .cronograma-widget {
+      background: var(--parchment-5);
+      border: 1px solid var(--parchment-15);
+      border-top: 3px solid var(--ember);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    .cronograma-widget__title { font-family: var(--font-display); font-size: 1.4rem; color: var(--ember); text-transform: uppercase; margin-bottom: 20px; letter-spacing: 0.05em; }
+    .cronograma-controls { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; align-items: flex-end; }
+    .cronograma-ctrl { flex: 1; min-width: 160px; }
+    .cronograma-ctrl label { display: block; font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 6px; }
+    .cronograma-ctrl input, .cronograma-ctrl select {
+      width: 100%;
+      background: var(--pitch);
+      border: 1px solid var(--parchment-30);
+      color: var(--parchment);
+      padding: 10px 14px;
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+    .cronograma-ctrl input:focus, .cronograma-ctrl select:focus { outline: none; border-color: var(--ember); }
+    .cronograma-table { width: 100%; border-collapse: collapse; }
+    .cronograma-table th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ash); padding: 8px 12px; border-bottom: 1px solid var(--parchment-10); text-align: left; }
+    .cronograma-table td { font-family: var(--font-body); font-size: 0.85rem; color: var(--parchment-70); padding: 10px 12px; border-bottom: 1px solid var(--parchment-5); font-weight: 300; }
+    .cronograma-table tr:first-child td { color: var(--parchment); font-weight: 500; background: var(--ember-10); }
+    .cronograma-table td:last-child { color: var(--ember); font-family: var(--font-mono); font-size: 0.8rem; }
+
+    /* === SERVICES BREAKDOWN SLIDE === */
+    .services-breakdown { display: flex; flex-direction: column; gap: 12px; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 2fr 3fr 1fr;
+      gap: 16px;
+      align-items: start;
+      background: var(--parchment-5);
+      border-left: 3px solid var(--ember);
+      padding: 16px 20px;
+      border-radius: 0 4px 4px 0;
+      transition: all 0.3s;
+    }
+    .service-row:hover { background: var(--ember-10); }
+    .service-row__name { font-family: var(--font-display); font-size: 0.95rem; color: var(--parchment); text-transform: uppercase; letter-spacing: 0.05em; }
+    .service-row__icon { font-size: 1.1rem; margin-bottom: 4px; }
+    .service-row__benefit { font-family: var(--font-body); font-size: 0.82rem; color: var(--ash); line-height: 1.5; font-weight: 300; }
+    .service-row__price { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ember); text-align: right; white-space: nowrap; }
+
+    /* Payment scheme stays same */
+
+    /* === PAYMENT SCHEME === */
+    .payment-scheme {
+      background: var(--parchment-5);
+      border: 1px solid var(--ember-30);
+      border-top: 3px solid var(--ember);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .payment-scheme__title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ember);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+    .payment-scheme__grid {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .payment-scheme__item {
+      flex: 1;
+      min-width: 160px;
+    }
+    .payment-scheme__tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--ash);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .payment-scheme__desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--parchment-70);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+    .payment-scheme__desc strong { color: var(--parchment); font-weight: 500; }
+    .payment-scheme__divider {
+      font-size: 1.25rem;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+    /* Ensure title-dark works on slide--mid too */
+    .slide--mid .title-dark { color: var(--parchment); }
+    .slide--mid .financial-subtitle { color: var(--ash); }
+
+    /* === CALCULATOR === */
+    .calculator { background: var(--rr-black); padding: 48px; border-radius: 12px; margin-bottom: 48px; }
+    .calculator-title { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--rr-teal); text-transform: uppercase; text-align: center; margin-bottom: 40px; letter-spacing: -0.02em; }
+    .calc-inputs { display: flex; gap: 32px; margin-bottom: 32px; flex-wrap: wrap; }
+    .calc-input-group { flex: 1; min-width: 200px; }
+    .calc-input-group label { display: block; font-family: var(--font-body); font-size: 0.85rem; color: var(--rr-white); margin-bottom: 8px; }
+    .calc-input-group .calc-value {
+      background: #111;
+      border: 1px solid #333;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--rr-white);
+      width: 100%;
+    }
+    .calc-input-group input[type="number"] {
+      background: #111;
+      border: 1px solid var(--rr-teal);
+      color: var(--rr-white);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      width: 100%;
+      font-family: var(--font-body);
+    }
+    .calc-input-group input[type="number"]:focus { outline: none; border-color: var(--rr-teal); box-shadow: 0 0 0 2px rgba(14,146,172,0.2); }
+    .calc-note { font-family: var(--font-body); font-size: 0.8rem; color: #888; margin-top: 6px; }
+    .calc-sliders { display: flex; gap: 32px; margin-bottom: 40px; flex-wrap: wrap; }
+    .calc-slider-group { flex: 1; min-width: 200px; }
+    .calc-slider-group label { display: block; font-family: var(--font-body); font-size: 0.85rem; color: var(--rr-white); margin-bottom: 8px; }
+    .slider-wrap { display: flex; align-items: center; gap: 12px; }
+    .slider-wrap input[type="range"] { flex: 1; -webkit-appearance: none; appearance: none; height: 6px; background: #333; border-radius: 3px; outline: none; }
+    .slider-wrap input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: var(--rr-teal); border-radius: 50%; cursor: pointer; }
+    .slider-wrap input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; background: var(--rr-teal); border-radius: 50%; cursor: pointer; border: none; }
+    .slider-value { font-family: var(--font-display); font-size: 1.25rem; color: var(--rr-teal); min-width: 48px; }
+    .slider-value--red { color: var(--rr-red); }
+    .calc-outputs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .calc-output-card {
+      background: #111;
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 3px solid var(--rr-teal);
+    }
+    .calc-output-card--red { border-left-color: var(--rr-red); }
+    .calc-output-card--white { border-left-color: var(--rr-white); }
+    .calc-output-card--gold { border-left-color: #D4A017; }
+    .calc-output__icon { font-size: 1.5rem; margin-bottom: 8px; display: block; }
+    .calc-output__label { font-family: var(--font-body); font-size: 0.75rem; color: #888; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.02em; }
+    .calc-output__value { font-family: var(--font-display); font-size: 2.75rem; color: var(--rr-teal); line-height: 1; margin-bottom: 12px; }
+    .calc-output__value--red { color: var(--rr-red); }
+    .calc-output__value--white { color: var(--rr-white); }
+    .calc-output__value--gold { color: #D4A017; font-size: 2.25rem; }
+    .calc-output__context { font-family: var(--font-body); font-size: 0.85rem; color: #888; line-height: 1.5; }
+    .calc-quote {
+      background: rgba(14,146,172,0.15);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--rr-teal);
+      margin-top: 32px;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--rr-teal);
+      line-height: 1.5;
+    }
+
+    /* === FAQ ACCORDION === */
+    .faq-title { text-align: center; margin-bottom: 32px; }
+    .faq-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 120px; }
+    .faq-item { border: 1px solid var(--parchment-15); border-radius: 4px; overflow: hidden; background: var(--parchment-5); }
+    .faq-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--parchment-70);
+      text-align: left;
+      transition: background 0.2s;
+    }
+    .faq-header:hover { background: var(--ember-10); color: var(--parchment); }
+    .faq-icon { color: var(--ember); font-family: var(--font-mono); font-weight: 400; font-size: 0.9rem; margin-right: 12px; letter-spacing: 0.05em; }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      background: var(--pitch);
+      transition: max-height 0.4s ease;
+      padding: 0 24px;
+    }
+    .faq-content-inner {
+      padding: 20px 0 28px;
+    }
+    .faq-content p { font-family: var(--font-body); font-size: 0.875rem; color: var(--ash); line-height: 1.8; font-weight: 300; }
+
+    /* === SLIDE 8: CLOSING === */
+    .closing { text-align: center; }
+    .closing-title { font-size: clamp(48px, 8vw, 96px); margin-bottom: 16px; }
+    .closing-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--rr-white);
+      max-width: 700px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+    .steps { max-width: 600px; margin: 0 auto 24px; text-align: left; }
+    .step { display: flex; gap: 24px; margin-bottom: 20px; position: relative; }
+    .step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      width: 2px;
+      height: calc(100% + 4px);
+      background: rgba(14,146,172,0.5);
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--rr-teal);
+      color: var(--rr-teal);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .step-content { padding-top: 4px; }
+    .step-title { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--rr-teal); text-transform: uppercase; margin-bottom: 4px; letter-spacing: -0.02em; }
+    .step-text { font-family: var(--font-body); font-size: 0.9rem; color: #ccc; line-height: 1.5; }
+    .contact-box {
+      background: var(--rr-teal);
+      color: var(--rr-black);
+      padding: 20px 32px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 0 auto 20px;
+    }
+    .contact-box__name { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; text-transform: uppercase; margin-bottom: 6px; letter-spacing: -0.02em; }
+    .contact-box__role { font-family: var(--font-body); font-size: 0.95rem; margin-bottom: 4px; }
+    .contact-box__loc { font-family: var(--font-body); font-size: 0.85rem; opacity: 0.8; }
+    .closing-cta {
+      display: inline-block;
+      background: var(--rr-red);
+      color: var(--rr-white);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 14px 40px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 20px;
+    }
+    .closing-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,68,65,0.3); }
+    .closing-footer { font-family: var(--font-body); font-size: 0.85rem; color: #555; font-style: italic; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .problem-grid { grid-template-columns: repeat(2, 1fr); }
+      .solution-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-timeline { flex-direction: column; }
+      .process-timeline::before { display: none; }
+      .calc-outputs { grid-template-columns: 1fr; }
+      .prototype-iframe { height: 280px; }
+    }
+    @media (max-width: 768px) {
+      .slide-container { padding: 60px 20px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .solution-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .comparison-table { font-size: 0.85rem; }
+      .calc-inputs, .calc-sliders { flex-direction: column; }
+      .calculator { padding: 24px; }
+      .hero-subtitle { font-size: 1rem; }
+      .nav-arrow { display: none; }
+      .nav-menu-btn { font-size: 0.85rem; padding: 6px 12px; }
+      .prototype-iframe { height: 260px; }
+      .calc-output__value { font-size: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .title-display { font-size: 48px; }
+      .closing-title { font-size: 42px; }
+      .calc-output__value { font-size: 1.75rem; }
+    }
+
+    /* === PRINT STYLES === */
+    @media print {
+      .presentation { position: static; overflow: visible; }
+      .slides-track { display: block; transform: none !important; }
+      .slide {
+        min-width: auto;
+        min-height: auto;
+        page-break-after: always;
+        display: block;
+        padding: 40px 0;
+      }
+      #particle-canvas, .nav-arrow, .nav-menu-btn, .nav-logo, .slide-counter, #progress-bar, .menu-overlay { display: none !important; }
+      .slide--dark, .slide--light { background: white !important; color: black !important; }
+      .title-display, .title-section { color: #0E92AC !important; }
+      .value-card, .team-card, .solution-block { background: #f5f5f5 !important; border-color: #ccc !important; }
+      .value-card__text, .team-desc, .solution-block__text { color: #333 !important; }
+      body { overflow: visible; }
+    }
+
+    /* === REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .animate-entry { opacity: 1; transform: none; }
+      #particle-canvas { display: none; }
+      .slides-track { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div class="nav-logo" onclick="goToSlide(0)">RR ALIADOS</div>
+  <button class="nav-menu-btn" onclick="toggleMenu()" aria-label="Abrir menú de navegación">MENU</button>
+  <div id="progress-bar" style="width: 0%"></div>
+  <button class="nav-arrow nav-arrow--left" onclick="goToSlide(currentSlide - 1)" aria-label="Anterior" id="arrow-left">&#8592;</button>
+  <button class="nav-arrow nav-arrow--right" onclick="goToSlide(currentSlide + 1)" aria-label="Siguiente" id="arrow-right">&#8594;</button>
+  <div class="slide-counter" id="slide-counter">01 / 10</div>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay" id="menu-overlay">
+    <button class="menu-close" onclick="toggleMenu()" aria-label="Cerrar menú">&#10005;</button>
+    <button class="menu-link" onclick="goToSlide(0); toggleMenu();">Apertura</button>
+    <button class="menu-link" onclick="goToSlide(1); toggleMenu();">¿Qué Somos?</button>
+    <button class="menu-link" onclick="goToSlide(2); toggleMenu();">El Problema</button>
+    <button class="menu-link" onclick="goToSlide(3); toggleMenu();">Nuestra Diferencia</button>
+    <button class="menu-link" onclick="goToSlide(4); toggleMenu();">La Solución</button>
+    <button class="menu-link" onclick="goToSlide(5); toggleMenu();">Nuestro Proceso</button>
+    <button class="menu-link" onclick="goToSlide(6); toggleMenu();">El Equipo</button>
+    <button class="menu-link" onclick="goToSlide(7); toggleMenu();">Inversión</button>
+    <button class="menu-link" onclick="goToSlide(8); toggleMenu();">Resumen de Servicios</button>
+    <button class="menu-link" onclick="goToSlide(9); toggleMenu();">Próximos Pasos</button>
+  </div>
+
+  <!-- Presentation -->
+  <div class="presentation">
+    <div class="slides-track" id="slides-track">
+
+      <!-- SLIDE 0: HERO -->
+      <section class="slide slide--dark" id="slide-0" data-index="0" aria-label="Apertura">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+          <p class="hero-eyebrow animate-entry">RR ALIADOS &times; WUUNDEER &mdash; 2026</p>
+          <h1 class="title-display animate-entry delay-1">CON LAS MANOS<br>EN EL FUEGO.</h1>
+          <p class="hero-subtitle animate-entry delay-2">M&aacute;s que una agencia de marketing, somos tu Growth Partner.</p>
+          <button class="cta-button animate-entry delay-3" onclick="goToSlide(1)">EMPEZAR PRESENTACI&Oacute;N &rarr;</button>
+        </div>
+      </section>
+
+      <!-- SLIDE 1: QUIENES SOMOS -->
+      <section class="slide slide--dark" id="slide-1" data-index="1" aria-label="¿Qué somos?">
+        <div class="slide-container">
+          <div class="about-grid">
+            <div class="about-left">
+              <h2 class="title-section animate-entry">&iquest;QU&Eacute; SOMOS?</h2>
+              <p class="body-text animate-entry delay-1">Nos dedicamos al branding estrat&eacute;gico fundamentado en investigaci&oacute;n para dar lugar a resoluciones que impulsen tu negocio.</p>
+              <p class="body-text animate-entry delay-2">Nos estructuramos alrededor de nuestros clientes. No vendemos servicios. Nos asociamos con tu crecimiento.</p>
+              <p class="body-text animate-entry delay-3">Usamos Design Thinking con el usuario siempre en el centro. Somos disruptores que respetan las reglas de lo est&eacute;tico de hoy.</p>
+            </div>
+            <div class="about-right">
+              <div class="value-card animate-entry delay-1">
+                <div class="value-card__icon">&#9889;</div>
+                <div class="value-card__title">AI First</div>
+                <div class="value-card__text">Usamos IA para entregar en d&iacute;as lo que otras agencias tardan semanas.</div>
+              </div>
+              <div class="value-card animate-entry delay-2">
+                <div class="value-card__icon">&#127919;</div>
+                <div class="value-card__title">Orientados a resultados</div>
+                <div class="value-card__text">No te vendemos presencia. Te generamos ventas.</div>
+              </div>
+              <div class="value-card animate-entry delay-3">
+                <div class="value-card__icon">&#129309;</div>
+                <div class="value-card__title">Skin in the game</div>
+                <div class="value-card__text">Si no creces t&uacute;, no crecemos nosotros.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: PROBLEMA WUUNDEER -->
+      <section class="slide slide--mid" id="slide-2" data-index="2" aria-label="Diagnóstico Wuundeer">
+        <div class="slide-container">
+          <h2 class="title-section title-dark comparison-title animate-entry">WUUNDEER HOY &mdash; DIAGN&Oacute;STICO</h2>
+          <p class="animate-entry delay-1" style="font-family: var(--font-body); font-size: 1.5rem; color: var(--rr-red); text-align: center; margin-bottom: 48px;">Vend&eacute;s bien. Pero nadie lo sabe digitalmente.</p>
+          <div class="problem-grid">
+            <div class="problem-card animate-entry delay-1">
+              <div class="problem-card__icon">&#128274;</div>
+              <div class="problem-card__title">SIN PRESENCIA DIGITAL ESTRUCTURADA</div>
+              <div class="problem-card__text">Operaciones 100% f&iacute;sicas y por WhatsApp. Los pedidos llegan por canales informales. No existe e-commerce. No hay canal de captaci&oacute;n de nuevos mayoristas activo.</div>
+            </div>
+            <div class="problem-card animate-entry delay-2">
+              <div class="problem-card__icon">&#128202;</div>
+              <div class="problem-card__title">INVENTARIO DESCONECTADO</div>
+              <div class="problem-card__text">El sistema SAC maneja el stock por referencia total, no por talla ni color. Eso bloquea la venta online. Sin sincronizaci&oacute;n = sobreventa = clientes perdidos.</div>
+            </div>
+            <div class="problem-card animate-entry delay-3">
+              <div class="problem-card__icon">&#127758;</div>
+              <div class="problem-card__title">MERCADO INTERNACIONAL DESAPROVECHADO</div>
+              <div class="problem-card__text">La confecci&oacute;n colombiana tiene demanda comprobada en EE.UU., Ecuador y Costa Rica. Sin presencia digital, ese mercado es invisible para Wuundeer.</div>
+            </div>
+          </div>
+          <div class="problem-separator animate-entry delay-4"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: DIFERENCIA VS AGENCIAS -->
+      <section class="slide slide--dark" id="slide-3" data-index="3" aria-label="Diferencia RR Aliados">
+        <div class="slide-container">
+          <h2 class="title-section comparison-title animate-entry">POR QU&Eacute; RR ALIADOS Y NO UNA AGENCIA TRADICIONAL</h2>
+          <div class="comparison-table-wrap animate-entry delay-1">
+            <table class="comparison-table" role="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">AGENCIA TRADICIONAL</th>
+                  <th scope="col">RR ALIADOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Modelo</td><td>Te venden servicios sueltos</td><td>Somos tu Growth Partner</td></tr>
+                <tr><td>Entregables</td><td>Reportes y decks</td><td>Resultados medibles en ventas</td></tr>
+                <tr><td>Velocidad</td><td>Semanas para un primer prototipo</td><td>Prototipo funcional antes de firmar</td></tr>
+                <tr><td>Tecnolog&iacute;a</td><td>Herramientas gen&eacute;ricas</td><td>Stack AI First + c&oacute;digo propio</td></tr>
+                <tr><td>Inventario</td><td>No integran tu sistema</td><td>Conectamos SAC con tu e-commerce</td></tr>
+                <tr><td>Pagos</td><td>Fee fijo sin importar resultados</td><td>Fee + % sobre ventas generadas</td></tr>
+                <tr><td>Equipo</td><td>Ejecutivos que externalizan todo</td><td>Equipo propio con skin in the game</td></tr>
+                <tr><td>Contenido</td><td>Stock o reels gen&eacute;ricos</td><td>Producci&oacute;n con modelo, equipo y c&aacute;mara</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: LA SOLUCION -->
+      <section class="slide slide--dark" id="slide-4" data-index="4" aria-label="La Solución">
+        <div class="slide-container" style="padding-top: 56px; padding-bottom: 16px; justify-content: flex-start;">
+          <h2 class="title-section comparison-title animate-entry" style="font-size: clamp(22px, 3vw, 36px); margin-bottom: 14px;">LO QUE CONSTRUIMOS PARA WUUNDEER</h2>
+          <div class="solution-grid">
+            <div class="solution-block animate-entry delay-1">
+              <div class="solution-block__icon">&#127909;</div>
+              <div class="solution-block__title">CONTENIDO PROFESIONAL</div>
+              <div class="solution-block__text">Reels semanales con camar&oacute;grafo, modelo y equipo de luces. Ideaci&oacute;n, gui&oacute;n, edici&oacute;n y publicaci&oacute;n. 12 reels/mes. Calendario semanal aprobado por Juan Jos&eacute; antes de producir.</div>
+            </div>
+            <div class="solution-block animate-entry delay-2">
+              <div class="solution-block__icon">&#127760;</div>
+              <div class="solution-block__title">WEB E-COMMERCE PROPIA</div>
+              <div class="solution-block__text">C&oacute;digo 100% propio. Sin Shopify. Sin dependencias. Cat&aacute;logo con filtros, secci&oacute;n mayorista con login, pasarela de pago (Wompi + Servientrega), CRM integrado.</div>
+            </div>
+            <div class="solution-block animate-entry delay-3">
+              <div class="solution-block__icon">&#128230;</div>
+              <div class="solution-block__title">INTEGRACI&Oacute;N SAC &rarr; WEB</div>
+              <div class="solution-block__text">Sincronizaci&oacute;n del inventario f&iacute;sico con la tienda online. Stock en tiempo real. Sin sobreventa. Sin pedidos imposibles.</div>
+            </div>
+            <div class="solution-block animate-entry delay-4">
+              <div class="solution-block__icon">&#128179;</div>
+              <div class="solution-block__title">PASARELA MULTICANAL</div>
+              <div class="solution-block__text">Wompi: tarjetas, Nequi, Bancolombia. Servientrega Relays: pago contra entrega. Notificaciones autom&aacute;ticas por compra.</div>
+            </div>
+            <div class="solution-block animate-entry delay-5">
+              <div class="solution-block__icon">&#128227;</div>
+              <div class="solution-block__title">PAUTA MAYORISTA INTELIGENTE</div>
+              <div class="solution-block__text">Pauta publicitaria enfocada en el canal mayorista, que es nuestro target principal. También incursionamos en pauta para clientes al detal.</div>
+            </div>
+            <div class="solution-block animate-entry delay-6">
+              <div class="solution-block__icon">&#128202;</div>
+              <div class="solution-block__title">CRM + REPORTES QUINCENALES</div>
+              <div class="solution-block__text">Panel de control: pedidos, clientes, inventario. Estados en tiempo real: recibido &rarr; proceso &rarr; enviado &rarr; entregado. Reporte quincenal de m&eacute;tricas con acciones concretas.</div>
+            </div>
+          </div>
+          <div class="prototype-box animate-entry">
+            <div class="prototype-label">[ PROTOTIPO FUNCIONAL &mdash; CONSTRUIDO ANTES DE ESTA REUNI&Oacute;N ]</div>
+            <iframe class="prototype-iframe" src="https://wuundeer-prototype.vercel.app/" title="Prototipo Wuundeer &mdash; RR Aliados" allow="fullscreen" loading="lazy"></iframe>
+            <button class="prototype-button" onclick="window.open('https://wuundeer-prototype.vercel.app/', '_blank')">ABRIR EN PANTALLA COMPLETA &rarr;</button>
+          </div>
+
+          <!-- PANEL EMPRESARIAL: Gestión de Usuarios -->
+          <div class="animate-entry" style="margin-top: 16px;">
+            <div style="background: var(--parchment-5); border: 1px solid var(--ember-30); border-top: 2px solid var(--ember); border-radius: 2px; padding: 0; overflow: hidden;">
+              <div style="background: var(--pitch); padding: 10px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--parchment-10);">
+                <span style="font-family: var(--font-display); font-size: 1.1rem; color: var(--parchment); letter-spacing: 0.05em;">WUUNDEER</span>
+                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); letter-spacing: 0.1em;">/ Panel Empresarial</span>
+                <span style="margin-left: auto; font-family: var(--font-mono); font-size: 0.65rem; color: var(--ember); letter-spacing: 0.1em; background: var(--ember-10); padding: 3px 10px; border: 1px solid var(--ember-30); border-radius: 2px;">ADMIN</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 180px 1fr; min-height: 380px;">
+                <!-- Sidebar -->
+                <div style="background: #111; border-right: 1px solid var(--parchment-10); padding: 20px 0;">
+                  <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--ash); letter-spacing: 0.15em; text-transform: uppercase; padding: 0 16px 10px;">Men&uacute;</div>
+                  <div style="padding: 10px 16px; font-family: var(--font-body); font-size: 0.82rem; color: var(--ash); cursor: pointer; display: flex; align-items: center; gap: 8px;">&#128230; Pedidos</div>
+                  <div style="padding: 10px 16px; font-family: var(--font-body); font-size: 0.82rem; color: var(--ash); cursor: pointer; display: flex; align-items: center; gap: 8px;">&#9989; Validar compras</div>
+                  <div style="padding: 10px 16px; font-family: var(--font-body); font-size: 0.82rem; color: var(--ash); cursor: pointer; display: flex; align-items: center; gap: 8px;">&#128101; Clientes</div>
+                  <div style="padding: 10px 16px; font-family: var(--font-body); font-size: 0.82rem; color: var(--ash); cursor: pointer; display: flex; align-items: center; gap: 8px;">&#128230; Inventario</div>
+                  <div style="padding: 10px 16px; font-family: var(--font-body); font-size: 0.82rem; color: var(--ember); cursor: pointer; display: flex; align-items: center; gap: 8px; background: var(--ember-10); border-left: 2px solid var(--ember);">&#9881; Configuraci&oacute;n</div>
+                </div>
+                <!-- Content -->
+                <div style="padding: 20px 24px;">
+                  <div style="font-family: var(--font-display); font-size: 1.2rem; color: var(--parchment); letter-spacing: 0.05em; margin-bottom: 16px;">Configuraci&oacute;n</div>
+                  <!-- Tabs -->
+                  <div style="display: flex; gap: 0; border-bottom: 1px solid var(--parchment-15); margin-bottom: 20px;">
+                    <div style="padding: 8px 18px; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ash); cursor: pointer; border-bottom: 2px solid transparent;">PERFIL</div>
+                    <div style="padding: 8px 18px; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ember); cursor: pointer; border-bottom: 2px solid var(--ember);">GESTI&Oacute;N DE USUARIOS</div>
+                    <div style="padding: 8px 18px; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ash); cursor: pointer; border-bottom: 2px solid transparent;">IMPORTAR / EXPORTAR</div>
+                  </div>
+                  <!-- User management content -->
+                  <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;">USUARIOS CON ACCESO AL SISTEMA</div>
+                  <!-- Existing user: Admin -->
+                  <div style="background: var(--parchment-5); border: 1px solid var(--parchment-10); border-radius: 2px; padding: 12px 16px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 36px; height: 36px; background: var(--void); border: 2px solid var(--ember); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 14px; color: var(--parchment); flex-shrink: 0;">JJ</div>
+                    <div style="flex: 1;">
+                      <div style="font-family: var(--font-body); font-size: 0.85rem; color: var(--parchment); font-weight: 500;">Juan Jos&eacute; &mdash; <span style="color: var(--ember); font-size: 0.75rem; font-family: var(--font-mono);">ADMINISTRADOR</span></div>
+                      <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); margin-top: 2px;">Acceso completo a todos los m&oacute;dulos</div>
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--ember); background: var(--ember-10); padding: 3px 8px; border-radius: 2px;">ACTIVO</span>
+                  </div>
+                  <!-- New user slot example -->
+                  <div style="background: var(--parchment-5); border: 1px solid var(--parchment-10); border-radius: 2px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; opacity: 0.7;">
+                    <div style="width: 36px; height: 36px; background: var(--pitch); border: 1px dashed var(--parchment-30); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; color: var(--ash);">+</div>
+                    <div style="flex: 1;">
+                      <div style="font-family: var(--font-body); font-size: 0.85rem; color: var(--ash);">Secretaria / Asistente &mdash; <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--parchment-50);">ROL PERSONALIZADO</span></div>
+                      <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); margin-top: 2px;">Pendiente de configurar</div>
+                    </div>
+                    <button onclick="event.stopPropagation();" style="background: var(--ember); color: var(--parchment); border: none; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; padding: 6px 12px; border-radius: 2px; cursor: pointer;">CREAR</button>
+                  </div>
+                  <!-- Roles RBAC -->
+                  <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ash); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px;">ROLES DISPONIBLES &mdash; PERMISOS GRANULARES</div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+                    <div style="background: var(--ember-10); border: 1px solid var(--ember-30); border-radius: 2px; padding: 10px 12px;">
+                      <div style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--ember); letter-spacing: 0.1em; margin-bottom: 4px;">ACCESO COMPLETO</div>
+                      <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ash); line-height: 1.4;">Pedidos, compras, clientes, inventario, configuraci&oacute;n</div>
+                    </div>
+                    <div style="background: var(--parchment-5); border: 1px solid var(--parchment-10); border-radius: 2px; padding: 10px 12px;">
+                      <div style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--parchment-70); letter-spacing: 0.1em; margin-bottom: 4px;">COMPRAS APROBADAS</div>
+                      <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ash); line-height: 1.4;">Solo compras validadas por stock f&iacute;sico. Sin acceso a pendientes.</div>
+                    </div>
+                    <div style="background: var(--parchment-5); border: 1px solid var(--parchment-10); border-radius: 2px; padding: 10px 12px;">
+                      <div style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--parchment-70); letter-spacing: 0.1em; margin-bottom: 4px;">SOLO INVENTARIO</div>
+                      <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ash); line-height: 1.4;">Lectura y edici&oacute;n de stock. Sin acceso a pedidos ni clientes.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: PROCESO 3 FASES -->
+      <section class="slide slide--mid" id="slide-5" data-index="5" aria-label="Nuestro Proceso">
+        <div class="slide-container">
+          <h2 class="title-section title-dark comparison-title animate-entry">C&Oacute;MO TRABAJAMOS &mdash; SIN SORPRESAS</h2>
+          <div class="process-timeline">
+            <div class="phase-card animate-entry delay-1">
+              <span class="phase-card__icon" role="img" aria-hidden="true">&#128269;</span>
+              <div class="phase-card__title">FASE 1: DIAGN&Oacute;STICO Y PROPUESTA</div>
+              <div class="phase-card__subtitle">(AHORA)</div>
+              <div class="phase-card__list">
+                <div class="phase-card__item">Reuni&oacute;n inicial: conocemos el negocio y necesidades</div>
+                <div class="phase-card__item">Prototipo funcional presentado (ya lo est&aacute;s viendo)</div>
+                <div class="phase-card__item">Propuesta econ&oacute;mica detallada</div>
+                <div class="phase-card__item">Definici&oacute;n de alcance y plazos</div>
+              </div>
+            </div>
+            <div class="phase-card animate-entry delay-2">
+              <span class="phase-card__icon" role="img" aria-hidden="true">&#9881;&#65039;</span>
+              <div class="phase-card__title">FASE 2: DESARROLLO Y PRODUCCI&Oacute;N</div>
+              <div class="phase-card__subtitle">(Por definir)</div>
+              <div class="phase-card__list">
+                <div class="phase-card__item">Desarrollo de la web con todas las funcionalidades</div>
+                <div class="phase-card__item">Primera sesi&oacute;n de fotograf&iacute;a y video con equipo profesional</div>
+                <div class="phase-card__item">Configuraci&oacute;n de pasarelas de pago y APIs</div>
+                <div class="phase-card__item">Integraci&oacute;n SAC &rarr; e-commerce</div>
+                <div class="phase-card__item">Configuraci&oacute;n de pauta y creativos</div>
+              </div>
+            </div>
+            <div class="phase-card animate-entry delay-3">
+              <span class="phase-card__icon" role="img" aria-hidden="true">&#128640;</span>
+              <div class="phase-card__title">FASE 3: LANZAMIENTO Y OPERACI&Oacute;N</div>
+              <div class="phase-card__subtitle">(Por definir)</div>
+              <div class="phase-card__list">
+                <div class="phase-card__item">Pruebas completas del flujo de compra</div>
+                <div class="phase-card__item">Capacitaci&oacute;n al equipo de Wuundeer</div>
+                <div class="phase-card__item">Lanzamiento oficial con contenido y pauta activa</div>
+                <div class="phase-card__item">Reportes quincenales + ajustes continuos</div>
+              </div>
+            </div>
+          </div>
+          <div class="alert-box animate-entry delay-4">
+            <span class="alert-box__icon" role="img" aria-hidden="true">&#9888;&#65039;</span>
+            <div>
+              <div class="alert-box__title">COMPROMISO RR ALIADOS</div>
+              <div class="alert-box__text">Los primeros 2 meses son de construcci&oacute;n y establecimiento. Los resultados medibles en ventas comienzan en el Mes 3. Esto va en el contrato &mdash; no solo en nuestra palabra.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: EQUIPO -->
+      <section class="slide slide--dark" id="slide-6" data-index="6" aria-label="El Equipo">
+        <div class="slide-container" style="padding-top: 56px; justify-content: flex-start;">
+          <h2 class="title-section comparison-title animate-entry">EL EQUIPO QUE TRABAJA PARA WUUNDEER</h2>
+          <div class="team-grid">
+            <div class="team-card animate-entry delay-1">
+              <div class="team-initial">S</div>
+              <div class="team-name">SANTIAGO ROSAS</div>
+              <div class="team-role">Founder &amp; CEO</div>
+              <div class="team-desc">Estrategia, ventas y visi&oacute;n de negocio. Con las manos en el fuego en cada proyecto.</div>
+            </div>
+            <div class="team-card animate-entry delay-2">
+              <div class="team-initial">J</div>
+              <div class="team-name">JUAN MANUEL MESA</div>
+              <div class="team-role">COO &amp; Desarrollador Frontend</div>
+              <div class="team-desc">El arquitecto de tu plataforma digital. Prototipa r&aacute;pido, construye s&oacute;lido.</div>
+            </div>
+            <div class="team-card animate-entry delay-3">
+              <div class="team-initial">A</div>
+              <div class="team-name">ANDR&Eacute;S HADECHINE</div>
+              <div class="team-role">Desarrollo Backend</div>
+              <div class="team-desc">Integraci&oacute;n de sistemas, APIs y bases de datos. El motor que conecta todo.</div>
+            </div>
+            <div class="team-card animate-entry delay-4">
+              <div class="team-initial">S</div>
+              <div class="team-name">SAMUEL ZULUAGA</div>
+              <div class="team-role">Director Creativo &amp; UX</div>
+              <div class="team-desc">El responsable de que tu marca se vea como debe verse. Dise&ntilde;o con intenci&oacute;n, no con templates.</div>
+            </div>
+            <div class="team-card animate-entry delay-5">
+              <div class="team-initial">EQ</div>
+              <div class="team-name">PRODUCCI&Oacute;N AUDIOVISUAL</div>
+              <div class="team-role">Equipo Profesional por Sesi&oacute;n</div>
+              <div class="team-desc">Camar&oacute;grafos, editores y modelos por sesi&oacute;n. Equipo profesional completo para cada grabaci&oacute;n.</div>
+            </div>
+          </div>
+          <!-- Equipo Marketing -->
+          <div class="team-section-label animate-entry delay-5" style="margin-top: 32px;">EQUIPO DE MARKETING</div>
+          <div class="team-grid--mkt">
+            <div class="team-card animate-entry delay-6">
+              <div class="team-initial">MK</div>
+              <div class="team-name">ESTRATEGA DE MARKETING</div>
+              <div class="team-role">Estrategia de Contenido</div>
+              <div class="team-desc">Crea las ideas y guiones para videos, reels y carruseles. Dirige la estrategia de contenido con visi&oacute;n de marca.</div>
+            </div>
+            <div class="team-card animate-entry delay-6">
+              <div class="team-initial">PA</div>
+              <div class="team-name">ESPECIALISTA DE PAUTA</div>
+              <div class="team-role">Pauta Publicitaria</div>
+              <div class="team-desc">Gestiona y optimiza las pautas publicitarias para mayoristas y al detal. Maximiza el retorno de la inversi&oacute;n en ads.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: PROPUESTA FINANCIERA -->
+      <section class="slide slide--mid" id="slide-7" data-index="7" aria-label="Inversión">
+        <div class="slide-container" style="padding-top: 56px; justify-content: flex-start;">
+          <h2 class="title-section title-dark financial-title animate-entry">INVERSI&Oacute;N &mdash; COMBO WUUNDEER</h2>
+          <p class="financial-subtitle animate-entry delay-1">Lo que incluye. Por qu&eacute; ese precio. Cu&aacute;nto necesit&aacute;s vender para pagarlo.</p>
+
+          <!-- Services Table -->
+          <div class="services-table-wrap animate-entry delay-2">
+            <table class="services-table">
+              <thead>
+                <tr><th>SERVICIO</th><th>PLAN</th><th class="col-number">COSTO INTERNO</th><th class="col-number">PRECIO INDIVIDUAL</th><th class="col-check">INCLUIDO</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Branding</td><td>B&aacute;sico</td><td class="col-number">$300.000</td><td class="col-number">$400.000</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>Desarrollo Web</td><td>Landing Page</td><td class="col-number">$640.000</td><td class="col-number">$800.000</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>Gesti&oacute;n de Redes</td><td>B&aacute;sico</td><td class="col-number">$300.000</td><td class="col-number">$400.000</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>Piezas Gr&aacute;ficas</td><td>Premium</td><td class="col-number">$132.000</td><td class="col-number">$176.000</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>Desarrollo Web</td><td>Pasarela de Pago</td><td class="col-number">$550.000</td><td class="col-number">$687.500</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>Producci&oacute;n de Video</td><td>B&aacute;sico</td><td class="col-number">$1.060.000</td><td class="col-number">$2.000.000</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>SEO Posicionamiento</td><td>B&aacute;sico</td><td class="col-number">$300.000</td><td class="col-number">$635.593</td><td class="col-check">&#10003;</td></tr>
+                <tr><td>Integraci&oacute;n CRM</td><td>&mdash;</td><td class="col-number">$700.000</td><td class="col-number">$933.333</td><td class="col-check">&#10003;</td></tr>
+                <tr class="total-row"><td colspan="2"><strong>TOTAL INDIVIDUAL</strong></td><td class="col-number"><strong>$3.982.000</strong></td><td class="col-number"><strong>$6.032.427</strong></td><td></td></tr>
+                <tr class="combo-row"><td colspan="3"><strong>COMBO WUUNDEER</strong></td><td class="col-number" colspan="2"><strong>$6.126.154</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="animate-entry delay-3">
+            <!-- SELECTOR DE PLANES -->
+            <div class="plan-selector">
+              <div class="plan-selector__title">ELIGE TU PLAN</div>
+              <div class="plan-selector__grid">
+                <div class="plan-card active" id="plan-a" onclick="selectPlan('a')">
+                  <div class="plan-card__badge">PLAN A — CRECIMIENTO COMPARTIDO</div>
+                  <div class="plan-card__price">$6.000.000<span>/mes</span></div>
+                  <div class="plan-card__detail">+ 10% sobre ventas generadas por RR Aliados</div>
+                  <div class="plan-card__desc">Invertís menos mensual. Nosotros tenemos skin in the game: si no vend&eacute;s, no cobramos la comisi&oacute;n.</div>
+                  <div class="plan-card__check">&#10003; SELECCIONADO</div>
+                </div>
+                <div class="plan-card" id="plan-b" onclick="selectPlan('b')">
+                  <div class="plan-card__badge">PLAN B — FEE FIJO</div>
+                  <div class="plan-card__price">$7.000.000<span>/mes</span></div>
+                  <div class="plan-card__detail">Sin comisi&oacute;n sobre ventas</div>
+                  <div class="plan-card__desc">Pag&aacute;s un valor fijo conocido. Todo lo que vend&aacute;s es 100% tuyo, sin porcentaje adicional.</div>
+                  <div class="plan-card__check">&#10003; SELECCIONADO</div>
+                </div>
+              </div>
+              <p class="combo-note" id="plan-note">Plan A activo: $6.000.000/mes + 10% comisi&oacute;n sobre ventas generadas por RR Aliados.</p>
+            </div>
+          </div>
+
+          <div class="payment-scheme animate-entry delay-4">
+            <div class="payment-scheme__title">ESQUEMA DE PAGO</div>
+            <div class="payment-scheme__grid">
+              <div class="payment-scheme__item">
+                <div class="payment-scheme__tag">D&Iacute;A 0</div>
+                <div class="payment-scheme__desc">Al firmar el contrato: <strong>50% o el valor total del primer mes</strong></div>
+              </div>
+              <div class="payment-scheme__divider">→</div>
+              <div class="payment-scheme__item">
+                <div class="payment-scheme__tag">MENSUAL O QUINCENAL</div>
+                <div class="payment-scheme__desc">El cliente define la modalidad de pago recurrente al momento de firmar</div>
+              </div>
+              <div class="payment-scheme__divider">→</div>
+              <div class="payment-scheme__item">
+                <div class="payment-scheme__tag">REVISIONES</div>
+                <div class="payment-scheme__desc">Sin costo adicional dentro del alcance del proyecto</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROI Calculator -->
+          <div class="calculator animate-entry delay-5">
+            <div class="calculator-title">&iquest;CU&Aacute;NTO NECESIT&Aacute;S VENDER PARA CUBRIR ESTA INVERSI&Oacute;N?</div>
+            <div class="calc-inputs">
+              <div class="calc-input-group">
+                <label>Inversi&oacute;n mensual en RR ALIADOS</label>
+                <div class="calc-value" id="calc-investment-display">$6.000.000 COP</div>
+                <div class="calc-note" id="calc-investment-note">(Plan A &mdash; ajustable arriba)</div>
+              </div>
+              <div class="calc-input-group">
+                <label for="calc-ticket-mayor">Ticket promedio por mayor</label>
+                <input type="number" id="calc-ticket-mayor" value="1000000" step="50000">
+                <div class="calc-note">COP &mdash; pedido m&iacute;nimo actual</div>
+              </div>
+              <div class="calc-input-group">
+                <label for="calc-ticket-detalle">Ticket promedio al detal</label>
+                <input type="number" id="calc-ticket-detalle" value="55000" step="5000">
+                <div class="calc-note">COP &mdash; precio unitario promedio</div>
+              </div>
+            </div>
+            <div class="calc-sliders">
+              <div class="calc-slider-group">
+                <label for="calc-slider-mayor">% de ventas por mayor</label>
+                <div class="slider-wrap">
+                  <input type="range" id="calc-slider-mayor" min="0" max="100" value="80">
+                  <span class="slider-value" id="calc-slider-mayor-value">80%</span>
+                </div>
+              </div>
+              <div class="calc-slider-group">
+                <label>% de ventas al detal</label>
+                <div class="slider-wrap">
+                  <div style="flex:1; height:6px; background:var(--rr-red); border-radius:3px; opacity:0.6;"></div>
+                  <span class="slider-value slider-value--red" id="calc-slider-detalle-value">20%</span>
+                </div>
+              </div>
+            </div>
+            <div class="calc-outputs">
+              <div class="calc-output-card">
+                <span class="calc-output__icon" role="img" aria-hidden="true">&#128230;</span>
+                <div class="calc-output__label">PEDIDOS POR MAYOR NECESARIOS/MES</div>
+                <div class="calc-output__value" id="calc-out-mayor" data-value="0">0</div>
+                <div class="calc-output__context">Un solo mayorista con docena m&iacute;nima de $1M ya cubre el 16% de la inversi&oacute;n.</div>
+              </div>
+              <div class="calc-output-card calc-output-card--red">
+                <span class="calc-output__icon" role="img" aria-hidden="true">&#128717;&#65039;</span>
+                <div class="calc-output__label">VENTAS AL DETAL NECESARIAS/MES</div>
+                <div class="calc-output__value calc-output__value--red" id="calc-out-detalle" data-value="0">0</div>
+                <div class="calc-output__context">Nueva oportunidad de mercado: el canal al detal complementa y diversifica tu fuente de ingresos.</div>
+              </div>
+              <div class="calc-output-card calc-output-card--white">
+                <span class="calc-output__icon" role="img" aria-hidden="true">&#128176;</span>
+                <div class="calc-output__label">FACTURACI&Oacute;N M&Iacute;NIMA NECESARIA/MES</div>
+                <div class="calc-output__value calc-output__value--white" id="calc-out-facturacion" data-value="0">$0</div>
+                <div class="calc-output__context">Para cubrir solo el costo de RR &mdash; tu ganancia es todo lo que supere esto.</div>
+              </div>
+              <div class="calc-output-card calc-output-card--gold">
+                <span class="calc-output__icon" role="img" aria-hidden="true">&#128640;</span>
+                <div class="calc-output__label">TIEMPO ESTIMADO DE RECUPERACI&Oacute;N</div>
+                <div class="calc-output__value calc-output__value--gold" id="calc-out-payback">0 meses</div>
+                <div class="calc-output__context">El tiempo en que Wuundeer puede recuperar la inversi&oacute;n con su crecimiento de pedidos mayoristas.</div>
+              </div>
+            </div>
+            <div class="calc-quote">
+              El momento de construir presencia digital es ahora. Cada semana sin esto es una semana que tu competencia lleva de ventaja.
+            </div>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <h3 class="title-section title-dark faq-title animate-entry">PREGUNTAS FRECUENTES</h3>
+          <div class="faq-list">
+            <div class="faq-item animate-entry delay-1">
+              <button class="faq-header" onclick="toggleFaq(this)">
+                <span><span class="faq-icon">[+]</span> &iquest;Por qu&eacute; trabajar con RR Aliados?</span>
+              </button>
+              <div class="faq-content">
+                <div class="faq-content-inner">
+                  <p>Porque no somos una agencia tradicional que te vende servicios sueltos. Somos tu Growth Partner: trabajamos con skin in the game, tenemos un equipo propio con especialistas en cada &aacute;rea, y entregamos resultados medibles &mdash; no solo decks bonitos. Si no crec&eacute;s vos, no crecemos nosotros.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item animate-entry delay-2">
+              <button class="faq-header" onclick="toggleFaq(this)">
+                <span><span class="faq-icon">[+]</span> &iquest;Por qu&eacute; c&oacute;digo propio y no Shopify?</span>
+              </button>
+              <div class="faq-content">
+                <div class="faq-content-inner">
+                  <p>Shopify cobra comisiones por transacci&oacute;n, te limita a sus plantillas y no se integra con el sistema SAC. C&oacute;digo propio = cero comisiones, integraci&oacute;n directa con tu inventario, y la plataforma es tuya para siempre.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item animate-entry delay-3">
+              <button class="faq-header" onclick="toggleFaq(this)">
+                <span><span class="faq-icon">[+]</span> &iquest;Qu&eacute; pasa si no veo resultados en el mes 1?</span>
+              </button>
+              <div class="faq-content">
+                <div class="faq-content-inner">
+                  <p>Los meses 1 y 2 son de construcci&oacute;n. Los resultados en ventas comienzan en el mes 3, y eso est&aacute; garantizado en el contrato.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: RESUMEN DE SERVICIOS -->
+      <section class="slide slide--dark" id="slide-8" data-index="8" aria-label="Resumen de Servicios">
+        <div class="slide-container" style="padding-top: 56px; justify-content: flex-start;">
+          <h2 class="title-section comparison-title animate-entry">TODO LO QUE RECIB&Eacute;S CON RR ALIADOS</h2>
+          <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--ash); text-align: center; margin-bottom: 28px;" class="animate-entry delay-1">Cada servicio tiene un prop&oacute;sito. Ac&aacute; te explicamos qu&eacute; es, c&oacute;mo funciona y qu&eacute; mejora le trae a Wuundeer.</p>
+          <div class="services-breakdown">
+            <div class="service-row animate-entry delay-1">
+              <div>
+                <div class="service-row__icon">&#127909;</div>
+                <div class="service-row__name">Contenido Profesional</div>
+              </div>
+              <div class="service-row__benefit">12 reels/mes con camar&oacute;grafo, modelo y equipo profesional. Ideaci&oacute;n, gui&oacute;n, edici&oacute;n y publicaci&oacute;n. <strong>Mejora:</strong> presencia constante en redes, autoridad de marca y captaci&oacute;n org&aacute;nica de nuevos clientes.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-2">
+              <div>
+                <div class="service-row__icon">&#127760;</div>
+                <div class="service-row__name">Web E-Commerce Propia</div>
+              </div>
+              <div class="service-row__benefit">Tienda online c&oacute;digo 100% propio. Cat&aacute;logo con filtros, secci&oacute;n mayorista con login, carrito y checkout. <strong>Mejora:</strong> ventas 24/7 sin intermediarios, sin comisiones de plataforma, plataforma tuya para siempre.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-2">
+              <div>
+                <div class="service-row__icon">&#128230;</div>
+                <div class="service-row__name">Integraci&oacute;n SAC &rarr; Web</div>
+              </div>
+              <div class="service-row__benefit">Sincronizaci&oacute;n del inventario f&iacute;sico (sistema SAC) con la tienda online en tiempo real. <strong>Mejora:</strong> cero sobreventa, pedidos siempre posibles, operaci&oacute;n sin errores manuales.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-3">
+              <div>
+                <div class="service-row__icon">&#128179;</div>
+                <div class="service-row__name">Pasarela Multicanal</div>
+              </div>
+              <div class="service-row__benefit">Wompi (tarjetas, Nequi, Bancolombia) + Servientrega Relays (pago contra entrega). Notificaciones autom&aacute;ticas. <strong>Mejora:</strong> m&aacute;xima cobertura de m&eacute;todos de pago, menos abandonos de carrito.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-3">
+              <div>
+                <div class="service-row__icon">&#127912;</div>
+                <div class="service-row__name">Piezas Gr&aacute;ficas</div>
+              </div>
+              <div class="service-row__benefit">12 piezas/mes entre carruseles, posts e historias. Enfocadas en comunidad, confianza y humanidad de marca: no solo vender, sino conectar. <strong>Mejora:</strong> mayor retenci&oacute;n de seguidores, reputaci&oacute;n s&oacute;lida y presencia constante m&aacute;s all&aacute; de los reels.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-3">
+              <div>
+                <div class="service-row__icon">&#128227;</div>
+                <div class="service-row__name">Pauta Publicitaria</div>
+              </div>
+              <div class="service-row__benefit">Pauta enfocada en canal mayorista como target principal, m&aacute;s incursi&oacute;n en canal al detal. Creativos optimizados seg&uacute;n resultados. <strong>Mejora:</strong> captaci&oacute;n activa de nuevos mayoristas y clientes finales.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-4">
+              <div>
+                <div class="service-row__icon">&#128202;</div>
+                <div class="service-row__name">CRM + Reportes Quincenales</div>
+              </div>
+              <div class="service-row__benefit">Panel de control: pedidos, clientes, inventario en tiempo real. Reporte quincenal con m&eacute;tricas y acciones concretas. <strong>Mejora:</strong> visibilidad total del negocio, decisiones basadas en datos, sin sorpresas.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+            <div class="service-row animate-entry delay-4">
+              <div>
+                <div class="service-row__icon">&#127919;</div>
+                <div class="service-row__name">Estrategia de Marketing</div>
+              </div>
+              <div class="service-row__benefit">Ideaci&oacute;n y guiones de carruseles, reels y piezas para redes. Direcci&oacute;n estrat&eacute;gica del contenido y las pautas. <strong>Mejora:</strong> mensaje coherente, contenido que convierte, no solo que se ve bonito.</div>
+              <div class="service-row__price">Incluido</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: CIERRE -->
+      <section class="slide slide--dark" id="slide-9" data-index="9" aria-label="Próximos Pasos">
+        <div class="slide-container closing" style="justify-content: flex-start; padding-top: 40px;">
+          <h2 class="title-display closing-title animate-entry" style="font-size: clamp(30px, 5vw, 64px); margin-bottom: 12px;">COMO SABEMOS QUE QUEREMOS<br>TRABAJAR JUNTOS.</h2>
+          <p class="closing-subtitle animate-entry delay-1">Wuundeer tiene el producto, la infraestructura y la demanda. RR ALIADOS tiene la estrategia, el equipo y la tecnolog&iacute;a. Lo &uacute;nico que falta es tu decisi&oacute;n.</p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; width: 100%; max-width: 960px; margin: 0 auto 24px;">
+            <!-- Pasos -->
+            <div class="steps animate-entry delay-2" style="margin-bottom: 0;">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <div class="step-title">RESPONDEMOS PREGUNTAS</div>
+                  <div class="step-text">Resolvemos todas las dudas para que todos salgamos con la misma informaci&oacute;n y total claridad.</div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <div class="step-title">PRECONTRATO</div>
+                  <div class="step-text">Formalizamos los t&eacute;rminos y el alcance en un documento previo antes de avanzar.</div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <div class="step-title">FIRMAMOS EL CONTRATO</div>
+                  <div class="step-text">Arrancamos oficialmente. Todo lo acordado queda por escrito y arranca la m&aacute;quina.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cronograma interactivo -->
+            <div class="cronograma-widget animate-entry delay-3" style="margin-bottom: 0;">
+              <div class="cronograma-widget__title">&#128197; Cronograma de Pagos</div>
+              <div class="cronograma-controls">
+                <div class="cronograma-ctrl">
+                  <label>Fecha de firma</label>
+                  <input type="date" id="cron-fecha" value="2026-07-01">
+                </div>
+                <div class="cronograma-ctrl">
+                  <label>Frecuencia</label>
+                  <select id="cron-freq">
+                    <option value="30">Mensual (cada 30 d&iacute;as)</option>
+                    <option value="15">Quincenal (cada 15 d&iacute;as)</option>
+                  </select>
+                </div>
+                <div class="cronograma-ctrl">
+                  <label>Plan activo</label>
+                  <select id="cron-plan">
+                    <option value="6000000">Plan A — $6.000.000 + 10%</option>
+                    <option value="7000000">Plan B — $7.000.000 fijo</option>
+                  </select>
+                </div>
+              </div>
+              <div style="overflow-x: auto;">
+                <table class="cronograma-table" id="cron-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Fecha</th>
+                      <th>Concepto</th>
+                      <th>Monto</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cron-body">
+                    <!-- generado por JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <div class="contact-box animate-entry delay-4" style="margin: 0;">
+              <div class="contact-box__name">RR ALIADOS</div>
+              <div class="contact-box__role">Santiago Rosas &mdash; Founder &amp; CEO</div>
+              <div class="contact-box__loc">Medell&iacute;n, Colombia &middot; 2026</div>
+            </div>
+            <button class="closing-cta animate-entry delay-4" style="margin: 0;" onclick="window.print()">DESCARGAR PROPUESTA PDF</button>
+          </div>
+          <p class="closing-footer" style="margin-top: 16px;">&ldquo;Con las manos en el fuego.&rdquo; &mdash; RR Aliados</p>
+        </div>
+      </section>
+
+    </div><!-- /slides-track -->
+  </div><!-- /presentation -->
+
+  <script>
+    // ==========================================
+    // NAVIGATION ENGINE
+    // ==========================================
+    var currentSlide = 0;
+    var totalSlides = 10;
+    var track = document.getElementById('slides-track');
+    var progressBar = document.getElementById('progress-bar');
+    var counter = document.getElementById('slide-counter');
+    var arrowLeft = document.getElementById('arrow-left');
+    var arrowRight = document.getElementById('arrow-right');
+    var menuOverlay = document.getElementById('menu-overlay');
+    var isMenuOpen = false;
+
+    function goToSlide(n) {
+      if (n < 0 || n >= totalSlides) return;
+      currentSlide = n;
+      track.style.transform = 'translateX(-' + (n * 100) + 'vw)';
+      updateProgress();
+      updateCounter();
+      updateArrows();
+      localStorage.setItem('rr-aliados-current-slide', n);
+      triggerSlideAnimations(n);
+      // Pause/resume particles
+      if (n === 0) { startParticles(); } else { stopParticles(); }
+    }
+
+    function updateProgress() {
+      var pct = ((currentSlide) / (totalSlides - 1)) * 100;
+      progressBar.style.width = pct + '%';
+    }
+
+    function updateCounter() {
+      var num = (currentSlide + 1).toString().padStart(2, '0');
+      counter.textContent = num + ' / ' + String(totalSlides).padStart(2, '0');
+    }
+
+    function updateArrows() {
+      if (arrowLeft) arrowLeft.disabled = currentSlide === 0;
+      if (arrowRight) arrowRight.disabled = currentSlide === totalSlides - 1;
+    }
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      menuOverlay.classList.toggle('active', isMenuOpen);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (isMenuOpen) {
+        if (e.key === 'Escape') toggleMenu();
+        return;
+      }
+      switch(e.key) {
+        case 'ArrowRight': case 'PageDown': case ' ':
+          e.preventDefault(); goToSlide(currentSlide + 1); break;
+        case 'ArrowLeft': case 'PageUp':
+          e.preventDefault(); goToSlide(currentSlide - 1); break;
+        case 'Home': e.preventDefault(); goToSlide(0); break;
+        case 'End': e.preventDefault(); goToSlide(totalSlides - 1); break;
+      }
+    });
+
+    // Touch/swipe support
+    var touchStartX = 0;
+    var touchEndX = 0;
+    document.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    document.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goToSlide(currentSlide + 1);
+        else goToSlide(currentSlide - 1);
+      }
+    }, { passive: true });
+
+    // Restore from localStorage
+    var savedSlide = parseInt(localStorage.getItem('rr-aliados-current-slide')) || 0;
+    if (savedSlide > 0) goToSlide(savedSlide);
+    else { updateProgress(); updateCounter(); updateArrows(); triggerSlideAnimations(0); }
+
+    // ==========================================
+    // INTERSECTION OBSERVER FOR ANIMATIONS
+    // ==========================================
+    function triggerSlideAnimations(slideIndex) {
+      var slide = document.getElementById('slide-' + slideIndex);
+      if (!slide) return;
+      var elements = slide.querySelectorAll('.animate-entry');
+      elements.forEach(function(el) { el.classList.remove('visible'); });
+      // Force reflow
+      void slide.offsetWidth;
+      elements.forEach(function(el, i) {
+        setTimeout(function() { el.classList.add('visible'); }, 50 + i * 80);
+      });
+    }
+
+    // Observe all slides for entry animations
+    var slideObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = parseInt(entry.target.getAttribute('data-index'));
+          triggerSlideAnimations(idx);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.slide').forEach(function(slide) {
+      slideObserver.observe(slide);
+    });
+
+    // ==========================================
+    // PARTICLE CANVAS SYSTEM
+    // ==========================================
+    var canvas = document.getElementById('particle-canvas');
+    var ctx = canvas ? canvas.getContext('2d') : null;
+    var particles = [];
+    var animFrameId = null;
+    var mouseX = -1000;
+    var mouseY = -1000;
+    var PARTICLE_COUNT = 80;
+    var CONNECTION_DIST = 120;
+    var MOUSE_REPULSION = 150;
+
+    function resizeCanvas() {
+      if (!canvas) return;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      for (var i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1
+        });
+      }
+    }
+
+    function drawParticles() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        // Update position
+        p.x += p.vx;
+        p.y += p.vy;
+        // Wrap around
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+        // Mouse repulsion
+        var dx = p.x - mouseX;
+        var dy = p.y - mouseY;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_REPULSION) {
+          var force = (MOUSE_REPULSION - dist) / MOUSE_REPULSION;
+          p.x += (dx / dist) * force * 2;
+          p.y += (dy / dist) * force * 2;
+        }
+        // Draw dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(14, 146, 172, 0.6)';
+        ctx.fill();
+      }
+
+      // Draw connections
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d < CONNECTION_DIST) {
+            var alpha = (1 - d / CONNECTION_DIST) * 0.15;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(14, 146, 172, ' + alpha + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animFrameId = requestAnimationFrame(drawParticles);
+    }
+
+    function startParticles() {
+      if (animFrameId) return;
+      resizeCanvas();
+      drawParticles();
+    }
+
+    function stopParticles() {
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId);
+        animFrameId = null;
+      }
+    }
+
+    if (canvas) {
+      resizeCanvas();
+      createParticles();
+      startParticles();
+      window.addEventListener('resize', function() { resizeCanvas(); });
+      document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+    }
+
+    // ==========================================
+    // PLAN SELECTOR
+    // ==========================================
+    var currentPlan = 'a';
+    var planInvestment = { a: 6000000, b: 7000000 };
+
+    function selectPlan(plan) {
+      currentPlan = plan;
+      document.getElementById('plan-a').classList.toggle('active', plan === 'a');
+      document.getElementById('plan-b').classList.toggle('active', plan === 'b');
+      var notes = {
+        a: 'Plan A activo: $6.000.000/mes + 10% comisión sobre ventas generadas por RR Aliados.',
+        b: 'Plan B activo: $7.000.000/mes fijo. Sin comisión sobre ventas.'
+      };
+      document.getElementById('plan-note').textContent = notes[plan];
+      var prices = { a: '$6.000.000 COP', b: '$7.000.000 COP' };
+      var noteLabels = { a: '(Plan A — + 10% sobre ventas)', b: '(Plan B — fee fijo, sin comisión)' };
+      if (document.getElementById('calc-investment-display')) {
+        document.getElementById('calc-investment-display').textContent = prices[plan];
+        document.getElementById('calc-investment-note').textContent = noteLabels[plan];
+      }
+      // Sync cronograma plan selector
+      var cronPlan = document.getElementById('cron-plan');
+      if (cronPlan) cronPlan.value = planInvestment[plan];
+      calcROI();
+      buildCronograma();
+    }
+
+    // ==========================================
+    // ROI CALCULATOR
+    // ==========================================
+    (function() {
+      var ticketMayorInput = document.getElementById('calc-ticket-mayor');
+      var ticketDetalleInput = document.getElementById('calc-ticket-detalle');
+      var sliderMayor = document.getElementById('calc-slider-mayor');
+      var sliderDetalleValue = document.getElementById('calc-slider-detalle-value');
+      var sliderMayorValue = document.getElementById('calc-slider-mayor-value');
+      var outMayor = document.getElementById('calc-out-mayor');
+      var outDetalle = document.getElementById('calc-out-detalle');
+      var outFacturacion = document.getElementById('calc-out-facturacion');
+      var outPayback = document.getElementById('calc-out-payback');
+
+      function animateValue(element, target, prefix, suffix) {
+        var current = parseInt(element.dataset.value || '0');
+        var diff = target - current;
+        if (diff === 0) return;
+        var duration = 600;
+        var startTime = performance.now();
+        function update(now) {
+          var elapsed = now - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var easeProgress = 1 - Math.pow(1 - progress, 3);
+          var val = Math.round(current + diff * easeProgress);
+          element.textContent = (prefix || '') + val.toLocaleString('es-CO') + (suffix || '');
+          element.dataset.value = val;
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      }
+
+      window.calcROI = function() {
+        var investment = planInvestment[currentPlan] || 6000000;
+        var ticketMayor = parseInt(ticketMayorInput ? ticketMayorInput.value : 1000000) || 1000000;
+        var ticketDetalle = parseInt(ticketDetalleInput ? ticketDetalleInput.value : 55000) || 55000;
+        var pctMayor = parseInt(sliderMayor ? sliderMayor.value : 80) || 80;
+        var pctDetalle = 100 - pctMayor;
+
+        if (sliderMayorValue) sliderMayorValue.textContent = pctMayor + '%';
+        if (sliderDetalleValue) sliderDetalleValue.textContent = pctDetalle + '%';
+
+        var mayorOrders = Math.ceil((investment * pctMayor / 100) / ticketMayor);
+        var detalleSales = Math.ceil((investment * pctDetalle / 100) / ticketDetalle);
+
+        if (outMayor) animateValue(outMayor, mayorOrders, '', '');
+        if (outDetalle) animateValue(outDetalle, detalleSales, '', '');
+        if (outFacturacion) {
+          outFacturacion.textContent = '$' + investment.toLocaleString('es-CO');
+          outFacturacion.dataset.value = investment;
+        }
+
+        var extraMonthlyRevenue = 3 * ticketMayor;
+        var monthsToPayback = extraMonthlyRevenue > 0 ? (investment / extraMonthlyRevenue) : 0;
+        if (outPayback) outPayback.textContent = monthsToPayback.toFixed(1) + ' meses';
+      };
+
+      if (ticketMayorInput) ticketMayorInput.addEventListener('input', calcROI);
+      if (ticketDetalleInput) ticketDetalleInput.addEventListener('input', calcROI);
+      if (sliderMayor) sliderMayor.addEventListener('input', calcROI);
+
+      setTimeout(calcROI, 500);
+    })();
+
+    // ==========================================
+    // CRONOGRAMA DE PAGOS
+    // ==========================================
+    function buildCronograma() {
+      var fechaInput = document.getElementById('cron-fecha');
+      var freqInput = document.getElementById('cron-freq');
+      var planInput = document.getElementById('cron-plan');
+      var tbody = document.getElementById('cron-body');
+      if (!fechaInput || !tbody) return;
+
+      var fechaStr = fechaInput.value || '2026-07-01';
+      var freq = parseInt(freqInput ? freqInput.value : 30);
+      var planVal = planInput ? parseInt(planInput.value) : planInvestment[currentPlan];
+      var planLabel = planVal === 7000000 ? 'Plan B — Fee fijo' : 'Plan A — Mensualidad';
+      var comisionLabel = planVal === 6000000 ? ' + 10% s/ventas' : '';
+
+      // Parse fecha
+      var parts = fechaStr.split('-');
+      var base = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+
+      var rows = '';
+      var numPagos = freq === 15 ? 11 : 5;
+
+      var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+      // Pago 0 — Firma del contrato (50% o primer mes completo)
+      var mitad = Math.round(planVal / 2).toLocaleString('es-CO');
+      rows += '<tr><td>0</td><td>' + base.getDate() + ' ' + meses[base.getMonth()] + ' ' + base.getFullYear() + '</td><td>Firma del contrato (anticipo)</td><td>$' + mitad + ' – $' + planVal.toLocaleString('es-CO') + '</td></tr>';
+
+      for (var i = 1; i <= numPagos; i++) {
+        var d = new Date(base.getFullYear(), base.getMonth(), base.getDate() + (freq * i));
+        var label = i === 1 ? planLabel + ' #1 — Inicio operación' : planLabel + ' #' + i;
+        rows += '<tr><td>' + i + '</td><td>' + d.getDate() + ' ' + meses[d.getMonth()] + ' ' + d.getFullYear() + '</td><td>' + label + comisionLabel + '</td><td>$' + planVal.toLocaleString('es-CO') + '</td></tr>';
+      }
+
+      tbody.innerHTML = rows;
+    }
+
+    // Listeners cronograma
+    document.addEventListener('DOMContentLoaded', function() {
+      var fields = ['cron-fecha', 'cron-freq', 'cron-plan'];
+      fields.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('change', buildCronograma);
+      });
+      buildCronograma();
+    });
+    setTimeout(buildCronograma, 600);
+
+    // ==========================================
+    // FAQ ACCORDION
+    // ==========================================
+    function toggleFaq(header) {
+      var item = header.parentElement;
+      var content = item.querySelector('.faq-content');
+      var inner = item.querySelector('.faq-content-inner');
+      var icon = header.querySelector('.faq-icon');
+      var isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(i) {
+        i.classList.remove('open');
+        var c = i.querySelector('.faq-content');
+        var ic = i.querySelector('.faq-icon');
+        if (c) c.style.maxHeight = '0';
+        if (ic) ic.textContent = '[+]';
+      });
+
+      // Open clicked if was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        if (content && inner) {
+          // Measure inner height (padding included) accurately
+          content.style.maxHeight = inner.offsetHeight + 'px';
+        }
+        if (icon) icon.textContent = '[-]';
+      }
+    }
+  </script>
+</body>
+</html>
